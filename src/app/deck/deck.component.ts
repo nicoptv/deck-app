@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-deck',
   templateUrl: './deck.component.html',
@@ -9,6 +10,7 @@ export class DeckComponent implements OnInit {
 
   deck : string[] = [];
   url : string;
+  deck_is_empty : boolean = false;
 
   constructor() { }
 
@@ -30,7 +32,7 @@ export class DeckComponent implements OnInit {
       this.deck.splice(0,1);
     }else{
       this.url = undefined;
-      console.log("jeu de carte vide");
+      this.deck_is_empty = true;
     }
   }
 
@@ -38,5 +40,8 @@ export class DeckComponent implements OnInit {
     for (let index = 1; index < 53; index++) {
       this.deck.push('../../assets/' + index + '.jpg');
     }
+    this.deck_is_empty = false;
   }
+
+  
 }

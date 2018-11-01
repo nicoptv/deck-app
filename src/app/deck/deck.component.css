@@ -14,3 +14,13 @@ img{
     height:500px;
     margin-bottom: 5%;
 }
+
+#task_bar{
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+#task_bar button{
+    margin-left: 10px;
+}

@@ -2,12 +2,19 @@
 
     <h1> Deck of cards </h1>
     <img class="img-fluid rounded-top" *ngIf="url" [src]="url">
-    <button type="button" class="btn btn-primary" (click)="dealOneCard ()">
-      Deal Card
-    </button>
-    
-    <button type="button" class="btn btn-secondary" (click)="shuffle ()">
-        Shuffle Deck
-    </button>
-  
+    <div *ngIf="deck_is_empty"  class="alert alert-warning">
+        <strong>Warning!</strong> The game is end !
+    </div>
+    <div id="task_bar">
+        <button type="button" class="btn btn-primary" (click)="dealOneCard ()">
+            Deal Card
+        </button>     
+        <button type="button" class="btn btn-secondary" (click)="shuffle ()">
+            Shuffle Deck
+        </button>
+        <button type="button" class="btn btn-secondary" *ngIf="deck_is_empty" (click)="initCard ()">
+            Reload deck
+        </button>
+    </div>
+
 </div>
