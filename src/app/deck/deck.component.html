@@ -1,0 +1,13 @@
+<div class="container">
+
+    <h1> Deck of cards </h1>
+    <img class="img-fluid rounded-top" *ngIf="url" [src]="url">
+    <button type="button" class="btn btn-primary" (click)="dealOneCard ()">
+      Deal Card
+    </button>
+    
+    <button type="button" class="btn btn-secondary" (click)="shuffle ()">
+        Shuffle Deck
+    </button>
+  
+</div>
